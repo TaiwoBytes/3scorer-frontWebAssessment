@@ -2,8 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import { COLORS } from '../../constants/colors';
 import { FWIconLogo } from '../../components/assets';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+
+   const navigate = useNavigate();
+
+   const handleNavigate = (e) => {
+     e.preventDefault();
+     let path = '/overview';
+     navigate(path);
+   };
+
   return (
     <LoginWrapper>
       <Logo>
@@ -30,7 +40,7 @@ const SignUp = () => {
           </FormGroup>
 
           <ButtonContainer>
-            <StyledButtonSubmit type="submit">
+            <StyledButtonSubmit type="submit" onClick={handleNavigate}>
               <p>Login</p>
             </StyledButtonSubmit>
           </ButtonContainer>
@@ -106,6 +116,7 @@ export const StyledButtonSubmit = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   p {
     color: #fff;

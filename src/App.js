@@ -1,9 +1,12 @@
-import Login from './pages/login/Login';
+import Routing from './route/Routing';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <Login />
+      <Router>
+        <Routing />
+      </Router>
     </div>
   );
 }
